@@ -69,6 +69,23 @@ GeJiangXue/
 
 ---
 
+## 维护者同步（本地两份拷贝的管理）
+
+skill 在本机有两处，`sync-skill.sh` 负责同步：
+
+| 位置 | 作用 |
+|---|---|
+| 仓库目录（本仓库 clone 下来的地方） | 提交、推送 GitHub |
+| `~/.agents/skills/video-director-breakdown/` | DSH 实际加载生效 |
+
+```bash
+./sync-skill.sh status   # 查看两边差异
+./sync-skill.sh push     # 本地 DSH 改动 → 提交 → 推送 GitHub
+./sync-skill.sh pull     # 拉取 GitHub → 同步到 DSH 目录
+```
+
+---
+
 ## 更新日志
 
 - **v3.1**：钩子确认为第一优先级（钩子自检清单、先确认再写正文）
