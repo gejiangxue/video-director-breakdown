@@ -1,4 +1,4 @@
-# GeJiangXue · 短视频编导拆解 Skill
+# video-director-breakdown · 短视频编导拆解 Skill
 
 > 拆解对标爆款 → 提炼钩子/分镜/结构 → 生成「结构相同、内容不同」的可拍摄脚本。
 
@@ -23,7 +23,7 @@
 ### 方式一：克隆到 DSH 用户技能目录（推荐）
 
 ```bash
-git clone https://github.com/gejiangxue/GeJiangXue.git ~/.agents/skills/video-director-breakdown
+git clone https://github.com/gejiangxue/video-director-breakdown.git ~/.agents/skills/video-director-breakdown
 ```
 
 > 说明：DSH 扫描 `~/.agents/skills/<名字>/SKILL.md`。仓库根目录就是 skill 内容，所以 clone 时把目标目录名定为 `video-director-breakdown`（即 SKILL.md 里声明的 `name`）。
@@ -58,11 +58,13 @@ git clone https://github.com/gejiangxue/GeJiangXue.git ~/.agents/skills/video-di
 ## 目录结构
 
 ```
-GeJiangXue/
+video-director-breakdown/
 ├── SKILL.md                        # skill 主文件
 ├── references/
 │   ├── hook-library.md             # 钩子公式库（20+ 公式，4 大类）
-│   └── script-structures.md        # 脚本结构模板（7 种）
+│   ├── script-structures.md        # 脚本结构模板（7 种）
+│   └── shot-language.md            # 镜头语言（景别/运镜/构图/灯光）
+├── sync-skill.sh                   # 同步脚本
 ├── README.md
 └── LICENSE
 ```

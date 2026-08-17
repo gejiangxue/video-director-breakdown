@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# sync-skill.sh — 同步 GeJiangXue 编导 skill
+# sync-skill.sh — 同步 video-director-breakdown 编导 skill
 #
 # 原则：仓库目录（本脚本所在目录）是唯一源头（source of truth）。
 #   - 改 skill 一律在仓库目录改（或改完同步到这里）
