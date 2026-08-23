@@ -216,3 +216,17 @@ metadata:
 - 「AI 视频复刻类」（video-prompt-reverse-engineer）：它们拆镜头/灯光/运镜用于 AI 生成，本技能拆钩子/分镜/结构/心理用于编导和实拍脚本（分镜的镜头语言参照它们的术语体系）。
 - 「剪辑类」（ai-jianji / jianying-editor）：本技能产出"怎么编、怎么拍"，剪辑类产出"怎么剪"。
 - 详细参考：`references/script-structures.md`（脚本结构模板）、`references/hook-library.md`（钩子公式库）、`references/shot-language.md`（镜头语言：景别/运镜/构图/灯光）。
+
+## 与 jianying 融合（编导 → 剪辑一条龙）
+
+本技能可产出**机器可读的脚本 JSON**（镜像 Markdown 分镜表），供
+`jianying-autoedit-agent` 直接转换成 `edit-blueprint.json` 建剪映草稿，
+实现「编导拆解 → 脚本 → 剪映成片」自动闭环。
+
+- **脚本 JSON 规范**：`references/script-json-schema.md`
+- **转换层**：`jianying-autoedit-agent/scripts/director_to_blueprint.py`
+- **使用**：写完 Markdown 分镜表后，同步产出一份脚本 JSON（字段与分镜表
+  逐一对应、互相自洽），再交给转换器 + 素材映射，即可自动建草稿。
+
+> 强制：即使输出 JSON，钩子仍必须先确认（`goal.hook_type/hook_text/hook_why`），
+> 确认后才写 `shots`。JSON 与 Markdown 分镜表必须是同一脚本的两种形态，严禁不一致。
